@@ -1,5 +1,5 @@
 /*
- * main.go - Entry point for the project
+ * info.go - Model for Modrinth root endpoint
  *
  * Copyright (C) 2026 Mrborghini
  *
@@ -17,11 +17,11 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
-package main
+package models
 
-import "github.com/mrborghini/go-logger"
-
-func main() {
-	log := logger.NewLogger("main")
-	log.Info("Running...")
+type APIInfo struct {
+	About         string `json:"about"`
+	Documentation string `json:"documentation"`
+	Name          string `json:"name"`
+	Version       string `json:"version"`
 }

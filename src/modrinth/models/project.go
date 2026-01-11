@@ -1,5 +1,5 @@
 /*
- * main.go - Entry point for the project
+ * project.go - Model for Modrinth project endpoint
  *
  * Copyright (C) 2026 Mrborghini
  *
@@ -17,11 +17,13 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
-package main
+package models
 
-import "github.com/mrborghini/go-logger"
+type ProjectSide string
 
-func main() {
-	log := logger.NewLogger("main")
-	log.Info("Running...")
-}
+const (
+	Required    ProjectSide = "required"
+	Optional    ProjectSide = "optional"
+	Unsupported ProjectSide = "unsupported"
+	Unknown     ProjectSide = "unknown"
+)
